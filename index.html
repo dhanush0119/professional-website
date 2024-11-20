@@ -1,0 +1,360 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="'UTF-8">
+        <meta http-equiv="X_UA_Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Personal Portfolio Website</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/9e2a49de7b.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id="header">
+            <div class="container">
+                <nav>
+                    <img src="images/logo.png" class="logo">
+                   <ul id="sidemenu">
+                        <li><a href="#header">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#works">Works</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <i class="fas fa-solid fa-circle-xmark" onclick="closemenu()"></i>
+                    </ul>
+                    <i class="fas fa-solid fa-bars" onclick="openmenu()"></i>
+                </nav>
+                <div class="header-text">
+                    <p>Full Stack Developer</p>
+                    <h1>Hi, I'm <span>Dhanush</span> <br>From India</h1>
+                </div>
+            </div>
+
+        </div> -->
+
+
+
+
+<!-- --------------------------------------new code----------------------------------------------------------------------------------------- -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/9e2a49de7b.js" crossorigin="anonymous"></script>
+    <style>
+        @keyframes fadeInOut {
+            0% { opacity: 0; }
+            25% { opacity: 1; }
+            75% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        .changing-text {
+            animation: fadeInOut 5s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="images/logo.png" class="logo">
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#works">Works</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fas fa-solid fa-circle-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fas fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <br></br>
+            
+            <p id="profession" class="changing-text">Full Stack Developer</p>
+            <h1>Hi, I'm <span>Dhanush</span></h1>
+        </div>
+        <a href="#header" class="home-btn">
+            <i class="fa-solid fa-arrow-up"></i>
+        </a>
+        <script>
+    // Get the home button element
+    const homeButton = document.querySelector('.home-btn');
+
+    // Function to toggle visibility of home button
+    function toggleHomeButton() {
+        // Get the current scroll position
+        const scrollPosition = window.scrollY;
+
+        // Get the height of the header section
+        const headerHeight = document.getElementById('header').offsetHeight;
+
+        // If scroll position is at or above header height, show the button; otherwise, hide it
+        if (scrollPosition >= headerHeight) {
+            homeButton.style.display = 'block';
+        } else {
+            homeButton.style.display = 'none';
+        }
+    }
+
+    // Event listener for scrolling
+    window.addEventListener('scroll', toggleHomeButton);
+
+    // Initial call to set button visibility based on initial scroll position
+    toggleHomeButton();
+</script>
+
+    </div>
+</div>
+
+
+<!-- Your existing HTML code continues here -->
+
+<!-- JavaScript for dynamic profession text -->
+<script>
+    const professions = ["Full Stack Developer", "Java Programmer"];
+    const professionElement = document.getElementById("profession");
+    
+    let currentIndex = 0;
+
+    function changeProfession() {
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % professions.length;
+            professionElement.textContent = professions[currentIndex];
+            nameElement.textContent = "New Name"; // Replace "New Name" with your desired text
+        }, 4950); // Change every 5 seconds
+    }
+    changeProfession();
+</script>
+
+
+
+        
+        <!---------------about-->
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-1">
+                        <img src="images/user.png">
+                    </div>
+                    <div class="about-col-2">
+                        <h1 class="sub-title">About Me</h1>
+                        <p>I am an Electronics and Communication Engineering student with a passion for programming. Specializing in Java and full-stack development, I enjoy crafting efficient solutions that make a real impact. Eager to learn, grow, and collaborate, I'm always exploring new technologies and embracing challenges head-on.</p>
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('education')">Education</p>
+                            <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                           
+                        </div>
+                        <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>* Backend Developer</span><br>django</li>
+                            <li><span>* Frontend Developer</span><br>React Native, React</li>
+                            <li><span>* Data Base Management System</span><br>Mysql</li>
+                            <li><span>* Programming</span><br>Java</li>
+                            <li><span>* Soft Skills</span><br>Leadership, Critical Thinking, Team collaboration, Adaptability, Work Ethic</li>
+                        </ul>
+                        </div>
+                        <div class="tab-contents" id="experience">
+                            <ul>
+                                
+                                <li><span>* MCSONICALS PRIVATE LIMITED   - 2023 | Coimbatore</span><br>I had an internship at MCSONICALS, where I learned about IoT</li>
+                                <li><span>* ACUREL WEIGHING SYSTEMS PRIVATE LIMITED - 2022 | Chennai</span><br>I had an internship in the assembly and testing department, where I learned about weighing equipment</li>
+                                
+                            </ul>
+                            </div>
+                            <div class="tab-contents" id="education">
+                                <ul>
+                                    <li><span>* Bachelors Degree in Electronics and Communication Engineering   2021 - 2025</span><br>Karpagam Institute of Technology, Coimbatore</li>
+                                    <li><span>* Sri Saraswathi Matric Higher Secondary School - Ranipet</span><br>HSC         (87%) - (2020-2021)<br> SSLC  (87%) - 2018-2019</li>
+                                    
+                                    
+                                </ul>
+                            </div>
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-------------------------------------services---------------------------------->
+<div id="works">
+    <div class="container">
+        <h1 class="sub-title">Works</h1>
+        <div class="services-list">
+           
+            <div>
+                <i class="fa-brands fa-app-store-ios"></i>
+                <h2><b>Developements</b></h2>
+                <h3>1. Hotel Reservation System - React, HTML, CSS</h3><br></br>
+                <h3>2. Unified Rescue Agency Coordination and communication using ML model - Mobile App</h3>
+                <br></br>
+                <h3>3. React Calculator App</h3><br></br>
+                <h3>4. React Native Little Lemon App</h3>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                
+                <a href="https://github.com/dhanush-r0119/">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-medal"></i>
+                <h2><b>Certifications</b></h2>
+                <h3>1. Introduction to MangoDB - MangoDB</h3><br>
+                <h3>2. React Native, React Basics -      Meta</h3>
+                </br>
+                <h3>3. Mobile Developement and Javascript - Meta</h3>
+                </br>
+                <h3>4. Backend Developer Capstone - Meta</h3>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                
+             <a href="https://drive.google.com/drive/folders/1B7fmGFcBnqjEZc4wyZmzGubNIdOcPz3f">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-newspaper"></i>
+                <h2><b>Achievements </b></h2>
+                
+                <h3>1. Unified Rescue Agency Coordination Using Machine Learning Model - Patent Publication | 2024</h3>
+                <p>Offical Journal of the Patent Office</p><br></br>
+                <h3>2. INNOVASIA - National Level Hackathon </h3>
+                <p>Unified Rescue Agency Coordination using Machine Learning Model - Project Presentation</p>
+                <p> Vasavi College of Engineering - Hyderabad | 2023 </p>
+                <br></br>
+                <h3>3. International Conference on Latest Trends in Science, Engineering and Technology</h3>
+                <p>Bloom Box Energey - Paper Presentation</p><p>Karpagam Institute of Technology - Coimbatore | 2022</p>
+                <br></br>
+                <a href="https://drive.google.com/drive/folders/186Jt5tVIv0pP-xDclCDsw7kSQ-feCssX">Learn more</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ----------------portfolio-------------------------- -->
+<div id="projects">
+    <div class="container">
+        <h1 class="sub-title">Projects</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/work-1.png">
+                <div class="layer">
+                    <h2>Unified Rescue Agency Coordination using Machine Learning Model</h2><br></br>
+                    <p>Led an innovative technology program utilizing machine learning for data collection, dynamic recommendations to government authorities, enhanced communication, and documented rescue operations.</p>
+                    <a href="https://github.com/dhanush-r0119/"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <!-- <div class="work">
+                <img src="images/work-2.png">
+                <div class="layer">
+                    <h2>Find My Doctor</h2></br>
+                    <p>It is a mobile app, It helps to book a appointment to the hospital we want to choose or nearby hospital </p>
+                    <a href="https://github.com/dhanush-r0119/"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div> -->
+            <div class="work">
+                <img src="images/work-3.png">
+                <div class="layer">
+                    <h2>Air Quality Monitor</h2></br>
+                    <p>It is a Device, which monitor the atmosphere air quality and Provide tha data. And it gives alert when the air quality down.</p>
+                    <a href="https://github.com/dhanush-r0119/"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+          
+        </div>
+        <a href="https://github.com/dhanush-r0119" class="btn">See more</a>
+      
+       
+</div>
+<!-- ------------contact------- -->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1>Contact Me</h1>
+            <p><i class="fa-sharp fa-solid fa-envelope"></i> dhanushrenugopal@gmail.com</p>
+            <p><i class="fa-solid fa-square-phone"></i> +91 7010922869</p>
+            <div class="social-icons">
+                  <a href="https://github.com/dhanush-r0119"> <i class="fa-brands fa-github"></i></a>
+                  <a href="https://www.linkedin.com/in/dhanushr2004/"> <i class="fa-brands fa-linkedin"></i></a>
+                  <a href="https://leetcode.com/21eca18/"> <i class="fa-solid fa-laptop-code"></i></a>
+                  <!-- <a href="https://stackoverflow.com/users/24230978/dhanush-r"><i class="fa-brands fa-stack-overflow"></i></a> -->
+                  <a href="https://www.instagram.com/dhanush0119/"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="https://twitter.com/Dhanush00098105"><i class="fa-brands fa-square-twitter"></i></a>
+                  
+                  
+            
+            </div>
+            
+                <a href="https://docs.google.com/document/d/18rWR9kD3FvKns_Ex1K0XPyxSYMBslkxI0uslpTvypUA/edit?usp=sharing" download class="btn btn2">Download Resume</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="email" name="Email" placeholder="Your Email" required>
+                <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                <button type="submit" class="btn btn2">Submit</button>
+            </form>
+            <span id="msg"></span>
+            </div>
+            
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright © Dhanush <i class="fa-brands fa-apple"></i></p>
+    </div>
+</div>
+
+
+<script>
+    var tablinks=document.getElementsByClassName("tab-links");
+    var tabcontents=document.getElementsByClassName("tab-contents");
+   function opentab(tabname){
+    for(tablink of tablinks)
+    {
+        tablink.classList.remove("active-link");
+    }
+    for(tabcontent of tabcontents)
+    {
+        tabcontent.classList.remove("active-tab");
+    }
+    event.currentTarget.classList.add("active-link");
+    document.getElementById(tabname).classList.add("active-tab");
+   }
+</script>
+<script>
+
+var sidemeu=document.getElementById("sidemenu");
+    
+    function openmenu(){
+        sidemeu.style.right= "0";
+    }
+    function closemenu(){
+        sidemeu.style.right= "-200px";
+    }
+</script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxh90jX_qnV3GrVpTjD4otQt4Qi8evzw0x-jdngImBdNGxFEzvmwGQQJkSaSA5UAcKLrA/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg=document.getElementById("msg")
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response =>{
+            msg.innerHTML=" Message sent Successfully"
+            setTimeout(function(){
+                msg.innerHTML=""
+            },1000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+    </body>
+</html>
